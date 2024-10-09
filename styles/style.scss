@@ -1,0 +1,300 @@
+@import '__variables.scss';
+
+@font-face {
+    font-family: 'Heavy'; 
+    src: url('/font/mont_heavy.ttf');
+    font-weight: normal; 
+    font-style: normal;
+  }
+
+  .sidebar h2 {
+    font-family: 'Heavy'; 
+    color: $primary;
+  }
+
+  body {
+    background-color: #f8f9fa;
+  }
+
+
+  .sidebar a.active {
+    color: #0056ff;
+    font-weight: bold;
+  }
+
+
+.slider-menu {
+  margin-top: 10px;
+}
+
+.sidebar {
+  background-color: #ffffff;
+  height: 100vh;
+  padding-top: 20px;
+  border-right: 1px solid #E6EFF5;
+}
+
+.profile-pic {
+  border-radius: 50%;
+  width: 60px;
+  height: 60px;
+}
+
+.profile-pic-big {
+height: 130px;
+width: 130px;
+}
+
+.main-content {
+  padding: 0;
+}
+
+  .sidebar-menu a {
+    padding: 0;
+    font-size: 18px;
+    color: $muted-a;
+    text-decoration: none;
+    display: block;
+    padding: 10px 0;
+    align-items: center;
+    font-family: sans-serif;
+  }
+
+  .main-content {
+    padding: 0;
+  }
+
+  .sidebar i {
+    margin-right: 20px;
+      font-size: 25px;}
+
+  
+#card {
+  border-radius: 25px;
+}
+
+input {
+  border-radius: 15px !important;
+}
+
+#heading h3{
+  font-size: 28px;
+  font-weight: 600;
+  color: $primary;
+}
+
+#heading {
+  align-items: center;
+background-color: #ffffff;
+  border-bottom: 1px solid #E6EFF5;
+}
+
+
+#settingTabs {
+  border-bottom: 1px solid #E6EFF5;
+}
+
+#profile-tab, #preferences-tab, #security-tab {
+  font-size: 16px;
+  font-weight: 500;
+}
+
+.nav-link {
+  text-transform: none !important; // Используем none, чтобы отобразить текст без преобразования
+
+}
+
+.nav-link.active {
+    color: $active !important;
+    border-color: $active !important;
+}
+
+
+
+
+
+
+
+
+.save-btn {
+  background-color: #0056ff;
+  color: white;
+}
+
+.save-btn:hover {
+  background-color: #0041cc;
+}
+
+.profile-pic-container {
+  position: relative;
+  display: inline-block;
+}
+
+.edit-icon {
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  border-radius: 50%;
+  padding: 5px;
+  color: white;
+  font-size: 18px;
+}
+
+.edit-icon i {
+  font-size: 16px;
+}
+
+.form-label {
+color: black;
+}
+
+input::placeholder {
+  color: $placeholder !important; /* Замените на нужный цвет */
+}
+
+.form-control {
+  padding: 10px 20px !important;
+  border: 1px solid $form-border !important;
+}
+
+#button {
+  background-color: $active;
+  padding: 10px 80px;
+  font-size: 18px;
+  border-radius: 15px;
+  color: #ffffff;
+  text-transform: none !important;
+  font-weight: 400;
+}
+
+.nav-item:nth-child(2) .nav-link,
+.nav-item:nth-child(3) .nav-link {
+  color: $placeholder;
+}
+
+
+.profile-pic-container {
+  position: relative;
+
+  .edit-icon {
+    position: absolute;
+    top: 80px;
+    right: 45px;
+    height: auto;
+  }
+}
+
+#heading-form {
+  border-radius: 40px;
+}
+
+
+.input-with-icon {
+  position: relative;        
+  #heading-form {
+    background-color: #F5F7FA;
+    width: 255px;            
+    padding-left: 50px !important;    
+    height: 40px;            
+    border: 1px solid #F5F7FA !important;  
+    border-radius: 5px;      
+    box-sizing: border-box;  
+  }
+
+  .search-icon {
+    position: absolute;       
+    top: 50%;                 
+    left: 25px;             
+    transform: translateY(-50%); 
+    width: 20px;             
+    height: auto;            
+    pointer-events: none;    
+  }
+}
+
+
+
+
+@media (max-width: 575.98px) {
+  .profile-pic-container .edit-icon {
+    position: absolute;
+    top: 80px; 
+    right: 55px;
+    height: auto;
+  }
+
+  .hide {
+    display: none;
+  }
+
+  
+}
+
+@media (min-width: 576px) and (max-width: 767.98px) {
+  .edit-icon {
+    position: absolute;
+    top: 20px;
+    right: 80px;
+    height: auto;
+  
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+@media (min-width: 768px) and (max-width: 991.98px) {
+  .profile-pic-container .edit-icon {
+    position: absolute;
+    top: 80px; 
+    right: 3px;
+    height: auto;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+@media (min-width: 992px) and (max-width: 1199.98px) {
+  .profile-pic-container .edit-icon {
+    position: absolute;
+    top: 80px; 
+    right: -6px;
+    height: auto;
+  }
+
+  .hide {
+    display: none;
+  }
+}
+
+@media (min-width: 1200px) and (max-width: 1479px) {
+  .profile-pic-container .edit-icon {
+    position: absolute; 
+    top: 80px;
+    right: 10px;
+    height: auto;
+  }
+  .hide {
+    display: none;
+  }
+
+}
+
+@media (min-width: 1480px) and (max-width: 1760px) {
+  .profile-pic-container .edit-icon {
+    position: absolute; 
+    top: 80px;
+    right: 28px;
+    height: auto;
+  }
+
+
+  .hide {
+    display: none;
+  }
+
+
+}

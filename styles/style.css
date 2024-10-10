@@ -1,13 +1,31 @@
 @charset "UTF-8";
 @font-face {
   font-family: "Heavy";
-  src: url("/font/mont_heavy.ttf");
+  src: url("./font/mont_heavy.ttf");
   font-weight: normal;
   font-style: normal;
 }
+:root .navbar {
+  box-shadow: none;
+  --mdb-navbar-brand-margin-end: 0;
+  --mdb-navbar-brand-img-margin-right: 0.25rem;
+  --mdb-navbar-padding-top: 0;
+  justify-content: 0;
+}
+
+.blue {
+  position: absolute;
+  top: 64vh;
+}
+
 .sidebar h2 {
-  font-family: "Heavy";
+  font-family: "Heavy", sans-serif;
   color: #343C6A;
+  font-weight: 800;
+}
+
+.navbar-brand {
+  align-items: center;
 }
 
 body {
@@ -15,7 +33,7 @@ body {
 }
 
 .sidebar a.active {
-  color: #0056ff;
+  color: #1814F3;
   font-weight: bold;
 }
 
@@ -83,6 +101,7 @@ input {
   align-items: center;
   background-color: #ffffff;
   border-bottom: 1px solid #E6EFF5;
+  width: auto;
 }
 
 #settingTabs {
@@ -91,7 +110,7 @@ input {
 
 #profile-tab, #preferences-tab, #security-tab {
   font-size: 16px;
-  font-weight: 500;
+  font-weight: 600;
 }
 
 .nav-link {
@@ -101,6 +120,14 @@ input {
 .nav-link.active {
   color: #1814F3 !important;
   border-color: #1814F3 !important;
+}
+
+body {
+  overflow-x: hidden; /* Отключает горизонтальную прокрутку */
+}
+
+body {
+  overflow-y: hidden; /* Отключает горизонтальную прокрутку */
 }
 
 .save-btn {
@@ -136,11 +163,11 @@ input {
 }
 
 input::-moz-placeholder {
-  color: #718EBF !important; /* Замените на нужный цвет */
+  color: #718EBF !important;
 }
 
 input::placeholder {
-  color: #718EBF !important; /* Замените на нужный цвет */
+  color: #718EBF !important;
 }
 
 .form-control {
@@ -177,6 +204,15 @@ input::placeholder {
   border-radius: 40px;
 }
 
+#heading-form-h {
+  background-color: #F5F7FA;
+  border: 1px solid #F5F7FA !important;
+  border-radius: 5px;
+  box-sizing: border-box;
+  width: 255px;
+  top: auto;
+}
+
 .input-with-icon {
   position: relative;
 }
@@ -199,6 +235,56 @@ input::placeholder {
   pointer-events: none;
 }
 
+ul#settingTabs {
+  flex-wrap: nowrap;
+  overflow-x: auto;
+}
+ul#settingTabs .nav-item .nav-link {
+  width: 100%;
+  white-space: nowrap;
+  padding: 0.5rem;
+}
+
+@media (max-width: 576px) {
+  ul#settingTabs {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  ul#settingTabs .nav-item .nav-link {
+    font-size: 0.8rem;
+  }
+}
+/* Основные стили для контейнера с элементами профиля и input */
+.d-flex.align-items-center {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Выравнивание элементов вправо */
+  /* Медиа-запрос для малых экранов (max-width: 576px) */
+}
+@media (max-width: 576px) {
+  .d-flex.align-items-center {
+    flex-direction: column; /* Изменяем направление на вертикальное для мобильных устройств */
+    align-items: flex-start; /* Выравниваем элементы по левому краю */
+  }
+  .d-flex.align-items-center .profile-pic {
+    margin-bottom: 10px; /* Отступ снизу у изображения профиля */
+  }
+  .d-flex.align-items-center #heading-form-h {
+    width: 100%; /* Занимает всю доступную ширину на маленьких экранах */
+    margin-top: 10px; /* Отступ сверху у инпута */
+    position: relative;
+    z-index: 1;
+  }
+  .d-flex.align-items-center #heading {
+    height: 100px;
+    border-bottom: none;
+  }
+  .d-flex.align-items-center .input-with-icon {
+    border-bottom: 1px solid #E6EFF5;
+  }
+}
+
 @media (max-width: 575.98px) {
   .profile-pic-container .edit-icon {
     position: absolute;
@@ -206,7 +292,7 @@ input::placeholder {
     right: 55px;
     height: auto;
   }
-  .hide {
+  .hide, #heading-form {
     display: none;
   }
 }
@@ -220,7 +306,17 @@ input::placeholder {
   .hide {
     display: none;
   }
+  #heading-form-block {
+    display: none;
+  }
+  #heading-form-h {
+    display: none;
+  }
 }
+.navbar {
+  box-shadow: none;
+}
+
 @media (min-width: 768px) and (max-width: 991.98px) {
   .profile-pic-container .edit-icon {
     position: absolute;
@@ -229,6 +325,9 @@ input::placeholder {
     height: auto;
   }
   .hide {
+    display: none;
+  }
+  #heading-form-h {
     display: none;
   }
 }
@@ -242,6 +341,9 @@ input::placeholder {
   .hide {
     display: none;
   }
+  #heading-form-h {
+    display: none;
+  }
 }
 @media (min-width: 1200px) and (max-width: 1479px) {
   .profile-pic-container .edit-icon {
@@ -250,18 +352,21 @@ input::placeholder {
     right: 10px;
     height: auto;
   }
-  .hide {
+  #heading-form-h {
     display: none;
   }
 }
-@media (min-width: 1480px) and (max-width: 1760px) {
+@media (min-width: 1480px) and (max-width: 2000px) {
   .profile-pic-container .edit-icon {
     position: absolute;
     top: 80px;
     right: 28px;
     height: auto;
   }
-  .hide {
+  #heading-form-h {
     display: none;
+  }
+  #main {
+    margin-top: -85px;
   }
 }/*# sourceMappingURL=style.css.map */

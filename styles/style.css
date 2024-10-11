@@ -122,14 +122,6 @@ input {
   border-color: #1814F3 !important;
 }
 
-body {
-  overflow-x: hidden; /* Отключает горизонтальную прокрутку */
-}
-
-body {
-  overflow-y: hidden; /* Отключает горизонтальную прокрутку */
-}
-
 .save-btn {
   background-color: #0056ff;
   color: white;
@@ -211,6 +203,8 @@ input::placeholder {
   box-sizing: border-box;
   width: 255px;
   top: auto;
+  margin: auto;
+  padding-left: 10px;
 }
 
 .input-with-icon {
@@ -235,9 +229,18 @@ input::placeholder {
   pointer-events: none;
 }
 
+.search-icon-h {
+  position: absolute;
+  top: 50%;
+  left: 14px;
+  transform: translateY(-50%);
+  width: 20px;
+  height: auto;
+  pointer-events: none;
+}
+
 ul#settingTabs {
   flex-wrap: nowrap;
-  overflow-x: auto;
 }
 ul#settingTabs .nav-item .nav-link {
   width: 100%;
@@ -245,63 +248,47 @@ ul#settingTabs .nav-item .nav-link {
   padding: 0.5rem;
 }
 
-@media (max-width: 576px) {
-  ul#settingTabs {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-  }
-  ul#settingTabs .nav-item .nav-link {
-    font-size: 0.8rem;
-  }
-}
-/* Основные стили для контейнера с элементами профиля и input */
-.d-flex.align-items-center {
-  display: flex;
-  align-items: center;
-  justify-content: flex-end; /* Выравнивание элементов вправо */
-  /* Медиа-запрос для малых экранов (max-width: 576px) */
-}
-@media (max-width: 576px) {
-  .d-flex.align-items-center {
-    flex-direction: column; /* Изменяем направление на вертикальное для мобильных устройств */
-    align-items: flex-start; /* Выравниваем элементы по левому краю */
-  }
-  .d-flex.align-items-center .profile-pic {
-    margin-bottom: 10px; /* Отступ снизу у изображения профиля */
-  }
-  .d-flex.align-items-center #heading-form-h {
-    width: 100%; /* Занимает всю доступную ширину на маленьких экранах */
-    margin-top: 10px; /* Отступ сверху у инпута */
-    position: relative;
-    z-index: 1;
-  }
-  .d-flex.align-items-center #heading {
-    height: 100px;
-    border-bottom: none;
-  }
-  .d-flex.align-items-center .input-with-icon {
-    border-bottom: 1px solid #E6EFF5;
-  }
+/* Основной стиль для .edit-icon */
+.profile-pic-container .edit-icon {
+  position: absolute;
+  top: 15%;
+  right: 18%; /* Расположите относительно размера контейнера */
+  height: auto;
 }
 
-@media (max-width: 575.98px) {
+/* Медиа-запрос для малых экранов */
+@media (max-width: 576px) {
   .profile-pic-container .edit-icon {
-    position: absolute;
-    top: 80px;
-    right: 55px;
-    height: auto;
+    top: 55%;
+    right: 33%; /* Подстраиваем отступ справа */
   }
-  .hide, #heading-form {
+  .hide, #heading-form, .search-icon {
     display: none;
   }
+  #heading {
+    border-bottom: none;
+    width: auto;
+  }
+  #border {
+    border-bottom: 1px solid #E6EFF5;
+    width: auto;
+    padding-bottom: 20px;
+  }
+  #border #heading-form {
+    background-color: #F5F7FA;
+    width: auto;
+    padding-left: 50px !important;
+  }
+  /* Медиа-запрос для экранов от 576px до 767.98px */
+  /* Медиа-запрос для экранов от 768px до 991.98px */
+  /* Медиа-запрос для экранов от 992px до 1199.98px */
+  /* Медиа-запрос для экранов от 1200px до 1479px */
+  /* Медиа-запрос для экранов от 1480px до 2000px */
 }
-@media (min-width: 576px) and (max-width: 767.98px) {
-  .edit-icon {
-    position: absolute;
-    top: 20px;
-    right: 80px;
-    height: auto;
+@media (max-width: 576px) and (min-width: 576px) and (max-width: 767.98px) {
+  .profile-pic-container .edit-icon {
+    top: 55%;
+    right: 36%;
   }
   .hide {
     display: none;
@@ -309,64 +296,79 @@ ul#settingTabs .nav-item .nav-link {
   #heading-form-block {
     display: none;
   }
-  #heading-form-h {
+  #heading-form-h, .search-icon-h {
     display: none;
   }
+  body {
+    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
+  }
+  body {
+    overflow-y: hidden; /* Отключает горизонтальную прокрутку */
+  }
 }
-.navbar {
-  box-shadow: none;
-}
-
-@media (min-width: 768px) and (max-width: 991.98px) {
+@media (max-width: 576px) and (min-width: 768px) and (max-width: 991.98px) {
   .profile-pic-container .edit-icon {
-    position: absolute;
-    top: 80px;
-    right: 3px;
-    height: auto;
+    top: 15%;
+    right: -10%;
   }
   .hide {
     display: none;
   }
-  #heading-form-h {
+  #heading-form-h, .search-icon-h {
     display: none;
+  }
+  body {
+    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
+  }
+  body {
+    overflow-y: hidden; /* Отключает горизонтальную прокрутку */
   }
 }
-@media (min-width: 992px) and (max-width: 1199.98px) {
+@media (max-width: 576px) and (min-width: 992px) and (max-width: 1199.98px) {
   .profile-pic-container .edit-icon {
-    position: absolute;
-    top: 80px;
-    right: -6px;
-    height: auto;
+    top: 15%;
+    right: 8%;
   }
-  .hide {
+  #heading-form-h, .search-icon-h {
     display: none;
   }
-  #heading-form-h {
-    display: none;
+  body {
+    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
+  }
+  body {
+    overflow-y: hidden; /* Отключает горизонтальную прокрутку */
   }
 }
-@media (min-width: 1200px) and (max-width: 1479px) {
+@media (max-width: 576px) and (min-width: 1200px) and (max-width: 1479px) {
   .profile-pic-container .edit-icon {
-    position: absolute;
-    top: 80px;
-    right: 10px;
-    height: auto;
+    top: 15%;
+    right: 5%;
   }
-  #heading-form-h {
+  #heading-form-h, .search-icon-h {
     display: none;
+  }
+  body {
+    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
+  }
+  body {
+    overflow-y: hidden; /* Отключает горизонтальную прокрутку */
   }
 }
-@media (min-width: 1480px) and (max-width: 2000px) {
+@media (max-width: 576px) and (min-width: 1480px) and (max-width: 2000px) {
   .profile-pic-container .edit-icon {
-    position: absolute;
-    top: 80px;
-    right: 28px;
-    height: auto;
+    top: 15%;
+    right: 18%;
   }
-  #heading-form-h {
-    display: none;
+  #border,
+  #border .input-with-icon,
+  #heading-form-h,
+  .search-icon-h {
+    display: none !important; /* Используем !important для более строгого применения */
   }
-  #main {
-    margin-top: -85px;
+  body {
+    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
+  }
+  body {
+    overflow-y: hidden; /* Отключает горизонтальную прокрутку */
   }
 }/*# sourceMappingURL=style.css.map */

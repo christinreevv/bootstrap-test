@@ -276,7 +276,7 @@ ul#settingTabs .nav-item .nav-link {
 @media (max-width: 576px) {
   .profile-pic-container .edit-icon {
     top: 55%;
-    right: 33%; /* Подстраиваем отступ справа */
+    right: 28%; /* Подстраиваем отступ справа */
   }
   #heading-form {
     display: none;
@@ -291,6 +291,9 @@ ul#settingTabs .nav-item .nav-link {
   .hide {
     display: none;
   }
+  .blue {
+    top: 73vh;
+  }
   .profile-pic-big {
     width: 130px;
     height: 130px;
@@ -299,10 +302,7 @@ ul#settingTabs .nav-item .nav-link {
     display: none;
   }
   body {
-    overflow-x: scroll;
-  }
-  body {
-    overflow-y: scroll;
+    overflow-y: auto;
   }
   #settingTabs {
     display: flex;
@@ -329,6 +329,9 @@ ul#settingTabs .nav-item .nav-link {
     top: 55%;
     right: 36%;
   }
+  body {
+    overflow-y: auto;
+  }
   .hide {
     display: none;
   }
@@ -339,16 +342,16 @@ ul#settingTabs .nav-item .nav-link {
     display: none;
   }
   body {
-    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
-  }
-  body {
-    overflow-y: hidden; /* Отключает горизонтальную прокрутку */
+    overflow-y: auto;
   }
 }
 @media (max-width: 576px) and (min-width: 768px) and (max-width: 991.98px) {
   .profile-pic-container .edit-icon {
     top: 15%;
     right: -10%;
+  }
+  body {
+    overflow-y: auto;
   }
   .hide {
     display: none;
@@ -357,10 +360,7 @@ ul#settingTabs .nav-item .nav-link {
     display: none;
   }
   body {
-    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
-  }
-  body {
-    overflow-y: hidden; /* Отключает горизонтальную прокрутку */
+    overflow-y: auto;
   }
 }
 @media (max-width: 576px) and (min-width: 992px) and (max-width: 1199.98px) {
@@ -372,10 +372,7 @@ ul#settingTabs .nav-item .nav-link {
     display: none;
   }
   body {
-    overflow-x: hidden; /* Отключает горизонтальную прокрутку */
-  }
-  body {
-    overflow-y: hidden; /* Отключает горизонтальную прокрутку */
+    overflow-y: auto;
   }
 }
 @media (max-width: 576px) and (min-width: 1200px) and (max-width: 1479px) {

@@ -267,6 +267,21 @@ input::placeholder {
 }
 
 
+#heading-form-block {
+  display: none;
+}
+#heading-form-h, .search-icon-h {
+  display: none;
+}
+
+body {
+  overflow-x: hidden; /* Отключает горизонтальную прокрутку */
+}
+
+body {
+  overflow-y: hidden; /* Отключает горизонтальную прокрутку */
+}
+
 ul#settingTabs {
 
   flex-wrap: nowrap;
@@ -298,12 +313,40 @@ ul#settingTabs {
     top: 55%;
     right: 33%; /* Подстраиваем отступ справа */
   }
-  .hide,  #heading-form,   .search-icon  {
+  #heading-form {
     display: none;
+  }
+  #heading-form-h, .search-icon-h {
+    display: block;
   }
   #heading {
     border-bottom: none;
     width: auto;
+  }
+
+  .hide {
+    display: none ;
+  }
+
+.profile-pic-big {
+  width: 130px;
+  height: 130px;
+}
+
+  #heading-form, .search-icon {
+    display: none;
+
+  }  body {
+    overflow-x: scroll; 
+  }
+  
+  body {
+    overflow-y: scroll; 
+  }
+
+  #settingTabs {
+display: flex;
+justify-content: space-between;
   }
 
   #border {
@@ -324,9 +367,12 @@ ul#settingTabs {
     top: 55%;
     right: 36%;
   }
+
+
   .hide {
-    display: none;
+    display: none ;
   }
+
 
   #heading-form-block {
     display: none;
